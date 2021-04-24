@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>udicr</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="text/css" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+<link rel="icon" href="favicon.ico"></head>
+<body>
+
+
+<div class="outer-wrapper" style="z-index: 5;">
+    <div class = "wrapper">
+        <div class="slide one">
+            <div class="info-content">
+                <h3> Multilevel Monte Carlo method - applied for the linear transport equation (Bachelor thesis)</h3>
+                <div class = "info">
+                    <ul>
+                        <li>
+                            <span class="title">Content:</span>
+                            <span>
+                                Numerical and Applied mathematics, partial differential equations, finite elements, uncertainty quatification
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Frameworks:</span>
+                            <span>
+                                C++, Python, <a href="https://www.math.kit.edu/ianm3/page/mplusplus/en" style="color: grey">M++</a>
+                            </span>
+                    </ul>
+                </div>
+
+                <div class = "description">
+                    <div class="image-bt">
+                        <img src="d97cfb7af0c4ab794603fde9ace596ad.png" style="height: 10em; width: 30em">
+                        <img src="sample_5_1.png" style="height: 10em; width: 30em">
+                    </div>
+                    <p> In my bachelor thesis I explained and implemented the Multilevel Monte Carlo method for the linear
+                    transport equation. More precisely for a given stochastic potential flow \( q(\omega,x) \) (which I derived from the potential
+                        flow equation with a stochastic permeability) I tried to derive the expected flow behavior of a substance.
+                        The flow for one given probability state \( \omega \) can be described by the linear transport equation
+                        with suitable initial and border conditions:
+                    </p>
+                    <div class="equation-text">
+                        <p>
+                            \begin{align*}
+                            &\text{For } q\colon \Omega \times \overline{\mathcal{D}} \to \mathbb{R}^2 \text{, derive }\rho \colon \Omega \times \overline{\mathcal{D}} \times \mathbb{T} \to \mathbb{R}_{\geq 0} \text{ satisfying} \\
+                            &\text{(TP)}
+                            \begin{cases}
+                            \begin{array}{rlll}
+                            \partial_t \rho (\omega, x, t) + \mathrm{div}(\rho(\omega,x,t)q(\omega,x)) &= 0 &\text{, für } (x,t) \in \mathcal{D} \times (0,T] \\
+                            \rho(\omega,x,t) &= \rho_{\text{in}}(x,t) &\text{, für } (x,t) \in \Gamma_{\text{in}} \times \mathbb{T} \\
+                            \rho(\omega,x,0)  &= \rho_0(x) &\text{, für } x \in  \mathcal{D}
+                            \end{array}
+                            \end{cases} \\
+                            \end{align*}
+                        </p>
+                    </div>
+                </div>
+                <div class="description">
+                    <p style="background-color: rgba(255,255,255,0.2); font-style: italic">'Monte Carlo methods are a very general and useful approach for the estimation of expectations
+                        arising from stochastic simulation.
+                        However, they can be computationally expensive, particularly when the cost of generating
+                        individual stochastic samples is very high, as in the case of stochastic PDEs.
+                        Multilevel Monte Carlo is a recently developed approach which greatly reduces the computational
+                        cost by performing most simulations with low accuracy at a correspondingly low cost, with
+                        relatively few simulations being performed at high accuracy and a high cost.' </p>
+                    <p>Michael B. Giles in 'Multilevel Monte Carlo methods' Acta Numerica, 24:259-328, 2015 </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide two">
+            <div class="info-content">
+                <h3> Vtk tools for unstructured meshes</h3>
+                <div class = "info">
+                    <ul>
+                        <li>
+                            <span class="title">Content:</span>
+                            <span>
+                                Visualization, Data Science, PDEs
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Frameworks:</span>
+                            <span>
+                                vtk, Python, Numpy, Pandas, matplotlib
+                            </span>
+                    </ul>
+                </div>
+
+                <div class = "description">
+
+                    <p>Vtk files are common to save complicated Datasets, such as Mesh Data from Finite Element Approximations.
+                        In my bachelor thesis I used the Multilevel Monte Carlo Algorithm, to calculate the expectation value
+                        of a given output functional of the solution of the linear advection equation, which is a commonly
+                        model problem for parabolic partiel differential equations (see e.g. Mathematical Aspects of Discontinuous Galerkin Methods).
+                        The MLMC Algorithm and the Discontinuous Galerkin are implemented in the Codeframework, M++,
+                        respectively MLMC-M++, which is developed at the Karlsruher Institute of Technology at the Institute
+                        for Applied and Numerical Mathematics in the group Sientific Computing,
+                        for more see http://www.math.kit.edu/ianm3/page/mplusplus/en.
+                    </p>
+                    <p>
+                        This Repository contains some work for better usage of vtk files in Python3, including reading
+                        to numpy, plotting meshes (scalar- and vector-valued) with matplotlib and combining meshes to
+                        an mlmc solution, which is a in mlmc way combined mean value of all solutions.
+                    </p>
+                    <p style="display: none">
+                        vtk_utilities.py contains the reading and plotting part
+                        and uses the package vtk (https://pypi.org/project/vtk/). unstructered_mesh.py contains the
+                        classes which I used as container for caclulating the mlmc solution. </p>
+
+                </div>
+                <div class="image-bt">
+                    <img src="d97cfb7af0c4ab794603fde9ace596ad.png" style="height: 10em; width: 30em">
+                    <img src="sample_5_1.png" style="height: 10em; width: 30em">
+                </div>
+                <img src="plot7.png" style="left: 25%;height: 19.2em; width: 25.6em">
+
+            </div>
+        </div>
+        <div class="slide three">
+            <div class="info-content">
+                <h3> Data Science and Machine Learning with Python</h3>
+                <div class = "info">
+                    <ul>
+                        <li>
+                            <span class="title">Content:</span>
+                            <span>
+                                Data Science, Machine Learning
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Frameworks:</span>
+                            <span>
+                                Python, Numpy, Pandas, matplotlib, jupyter
+                            </span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide four">
+            <div class="info-content">
+                <h3> Game of Life in Parallel Computing</h3>
+                <div class = "info">
+                    <ul>
+                        <li>
+                            <span class="title">Content:</span>
+                            <span>
+                                Parallel Computing, Message Parsing, cluster computing
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Frameworks:</span>
+                            <span>
+                                C++, MPI
+                            </span>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="slide five">
+            <div class="info-content">
+                <h3> My own portfolio website</h3>
+                <div class = "info">
+                    <ul>
+                        <li>
+                            <span class="title">Content:</span>
+                            <span>
+                                Learning new skills, Web development
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Frameworks:</span>
+                            <span>
+                                HTML, CSS, Javascript, Webpack, Flask
+                            </span>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<div style="z-index: 10; position:relative">
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link"  href="index.html">N Bodies</a>
+        <a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+</div>
+
+
+<script src="./js/Lore.canvas.bundle.js"></script></body>
+</html>

@@ -1,1 +1,37 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>udicr</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="text/css" href="css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+<link rel="icon" href="favicon.ico"></head>
+<body>
+<div class="vscontent" style="z-index:1; position: absolute;
+    overflow: auto;">
+    <h1>Hello World!</h1>
+    <h2>I'm <span class="typed-text"></span><span class="cursor"> &nbsp;</span></h2>
+</div>
+<canvas style="z-index:5; position: absolute"></canvas>
+<div style="z-index: 10; position:relative">
+  <nav class="nav nav-masthead justify-content-center float-md-end">
+    <a class="nav-link active" aria-current="page" href="index.html">N Bodies</a>
+    <a class="nav-link" href="portfolio.html">Portfolio</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+  </nav>
+</div>
+<div class="equation" style="z-index: 10;">
+  <p>
+    \[ \frac{ \partial^2 s_i}{\partial t^2}  = - \frac{1}{m_i} \frac{\partial U}{\partial s_i}  \]
+    \[ U = - \sum_{1 \leq i  < j \leq n} \frac{Gm_i m_j}{ || s_j - s_i ||_2} \]
+  </p>
+</div>
+<script src="./js/HOME.canvas.bundle.js"></script></body>
+</html>
