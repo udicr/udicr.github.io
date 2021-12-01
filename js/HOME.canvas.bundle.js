@@ -581,7 +581,8 @@ addEventListener('resize', function () {
   init();
 }); // Typed Text behavior
 
-var textArray = ["udicr.", "a mathematician.", "a coder.", "interested in numerical mathematics.", "udicr."];
+var textArray = ["udicr."]; //,"a mathematician.","a coder.","interested in numerical mathematics.","udicr."]
+
 var typingDelay = 200;
 var erasingDelay = 100;
 var newTextDelay = 2000;
